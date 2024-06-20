@@ -1,13 +1,13 @@
 // Dashboard.js
 import React from 'react';
 
-const Home = () => {
+const Dashboard = () => {
   return (
     <div>
-      <h4>Home</h4>
+      <h4>Dashboard</h4>
       
     </div>
   );
 }
 
-export default Home;
+export default Dashboard;
