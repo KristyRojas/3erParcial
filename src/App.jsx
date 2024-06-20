@@ -1,28 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.js
+import React, { useState } from 'react';
+import Header from './components/Header';
+import Home from './components/Home';
+import About from './components/About';
+import Dashboard from './components/Dashboard';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [page, setPage] = useState('home');
+
+  const handleChangePage = (pageName) => {
+    setPage(pageName);
+  }
+
+  const renderPage = () => {
+    switch (page) {
+      case 'home':
+        return <Home />;
+      case 'about':
+        return <About />;
+      case 'dashboard':
+        return <Dashboard />;
+      default:
+        return <Home />;
+    }
+  }
 
   return (
-    <>
-      
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <Header onChangePage={handleChangePage} />
+      <main>
+        {renderPage()}
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
+
