@@ -1,13 +1,13 @@
 // Dashboard.js
 import React from 'react';
 
-const Home = () => {
+const About = () => {
   return (
     <div>
-      <h4>Home</h4>
+      <h4>About</h4>
       
     </div>
   );
 }
 
-export default Home;
+export default About;
