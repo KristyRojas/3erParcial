@@ -1,39 +1,28 @@
-// App.js
-import React, { useState } from 'react';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
 import Dashboard from './components/Dashboard';
 
 const App = () => {
-  const [page, setPage] = useState('home');
-
-  const handleChangePage = (pageName) => {
-    setPage(pageName);
-  }
-
-  const renderPage = () => {
-    switch (page) {
-      case 'home':
-        return <Home />;
-      case 'about':
-        return <About />;
-      case 'dashboard':
-        return <Dashboard />;
-      default:
-        return <Home />;
-    }
-  }
-
   return (
-    <div className="App">
-      <Header onChangePage={handleChangePage} />
-      <main>
-        {renderPage()}
-      </main>
-    </div>
+    <Router>
+      <div>
+        
+
+        <main>
+          <Route path="/" exact component={Home} />
+          <Route path="/header" exact component={Header} />
+          <Route path="/about" component={About} />
+          <Route path="/dashboard" component={Dashboard} />
+        </main>
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
 
