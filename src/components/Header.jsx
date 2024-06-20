@@ -1,13 +1,13 @@
 // Dashboard.js
 import React from 'react';
 
-const Home = () => {
+const Header = () => {
   return (
     <div>
-      <h4>Home</h4>
+      <h4>Header</h4>
       
     </div>
   );
 }
 
-export default Home;
+export default Header;
